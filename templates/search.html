@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <h1>Search</h1>
+    <form action="/search" method="post">
+        <label for="sstate">Enter Zip Code:</label>
+        <input type="text" id="sstate" name="sstate">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if search_results %}
+    <h2>Search Results:</h2>
+    <ul>
+        {% for result in search_results %}
+        <li>{{ result }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
